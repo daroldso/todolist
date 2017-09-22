@@ -23,10 +23,9 @@ class TodoForm extends Component {
       today: false,
       clear: false,
       close: false,
-      closeOnSelect: true, // Close upon selecting a date,
+      closeOnSelect: true,
       onSet: function({ select }) {
         const date = moment(select).format('YYYY-MM-DD');
-        console.log(date);
         self.setState({ date });
       }
     });
@@ -48,7 +47,6 @@ class TodoForm extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    console.log(this.state);
     if (this.state.date === '') {
       return;
     }
