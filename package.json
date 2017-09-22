@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=production && webpack && node index.js",
-    "dev": "webpack --watch && nodemon index.js"
+    "dev": "npm-run-all --parallel watch:build watch:server",
+    "watch:server": "nodemon index.js --watch index.js --watch \"src/server\"",
+    "watch:build": "webpack --watch"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -29,6 +31,7 @@
     "gulp": "^3.9.1",
     "jest": "^21.1.0",
     "nodemon": "^1.12.1",
+    "npm-run-all": "^4.1.1",
     "style-loader": "^0.18.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
