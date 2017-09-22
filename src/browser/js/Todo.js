@@ -62,21 +62,32 @@ class Todo extends Component {
   }
 
   render() {
-    let errorMsg = !this.state.isAuthed ? (
-      <div className="alert red darken-3">
-        Please auth with Google to create/view/remove todo items
-      </div>
-    ) : (
-      ''
-    );
+    let mainComponent = '';
+    if (this.state.isAuthed) {
+      mainComponent = (
+        <div>
+          <TodoForm
+            handleSubmit={this.handleSubmit}
+            handlePostError={this.handlePostError}
+          />
+          <p>You can only see events start after today</p>
+        </div>
+      );
+    } else {
+      mainComponent = (
+        <div>
+          <div className="alert red darken-3">
+            Please auth with Google to create/view/remove todo items
+          </div>
+          <a href="/auth" className="waves-effect waves-light btn">
+            Auth with Google
+          </a>
+        </div>
+      );
+    }
     return (
       <div>
-        {errorMsg}
-        <TodoForm
-          handleSubmit={this.handleSubmit}
-          handlePostError={this.handlePostError}
-        />
-        <p>You can only see events start after today</p>
+        {mainComponent}
         <ul>
           {this.state.todos.map(todo => (
             <li key={todo.id}>
