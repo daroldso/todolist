@@ -11,7 +11,6 @@ var scopes = [
 ];
 
 exports.client = oauth2Client;
-exports.calendar = calendar;
 
 /**
  * Redirect user to Google Auth
