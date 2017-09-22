@@ -1,6 +1,5 @@
 'use strict';
 
-const Todo = require('../models/todo');
 const google = require('googleapis');
 const gapi = require('../gapi');
 
