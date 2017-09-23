@@ -3,9 +3,8 @@
 let config = {
   port: process.env.PORT || 3000,
   gapi: {
-    clientId:
-      '451432627326-t5uk6h8643phnc92mu7sikk5l93eaijn.apps.googleusercontent.com',
-    clientSecret: 'RXj-MvPlOzWn8jfA4ylzfOi8',
+    clientId: '',
+    clientSecret: '',
     redirectUrl: 'http://localhost:3000/oauth2callback'
   }
 };

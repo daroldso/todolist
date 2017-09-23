@@ -13,6 +13,7 @@ To run the application in production mode, run
 ```
 npm start
 ```
+and browse to [http://localhost:3000](http://localhost:3000)
 
 ## Authorize with Google Calendar API
 To use this application, you will need to authorize with Google to grant this application read/write access to your Google Calendar. The scopes are defined in `src/server/gapi.js`. The application will not modify any of your calendar items by itself.
